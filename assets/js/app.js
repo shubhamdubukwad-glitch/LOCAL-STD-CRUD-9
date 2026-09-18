@@ -48,10 +48,7 @@ const stdcontainer = document.getElementById('stdcontainer')
 // localStorage.setItem('stdArr', JSON.stringify(stdArr));
 
 
-let sdtjson = localStorage.getItem('stdArr');
-// cl(sdtjson)
-
-let stdArr = JSON.parse(localStorage.getItem('stdArr'))
+let stdArr = JSON.parse(localStorage.getItem('stdArr'))||[]
 // cl(stdArr)
 
 //readstd//
@@ -93,6 +90,7 @@ function oncreatestd(ele) {
     localStorage.setItem('stdArr', JSON.stringify(stdArr))
 
     let tr = document.createElement('tr')
+    tr.id=createobj.id;
     tr.innerHTML = `                      <td>${stdArr.length}</td>
                                         <td>${createobj.fname}</td>
                                         <td>${createobj.lname}</td>
